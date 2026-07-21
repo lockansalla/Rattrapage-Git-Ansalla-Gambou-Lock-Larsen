@@ -7,7 +7,7 @@ demo = gr.Interface(
     fn=message,
     inputs=[],
     outputs="text",
-    title="🎓 Application Gradio - Rattrapage Git/GitHub"
+    title="🎓 Application Gradio - Rattrapage Git/GitHub - Ansalla Gambou"
 )
 
 if __name__ == "__main__":
