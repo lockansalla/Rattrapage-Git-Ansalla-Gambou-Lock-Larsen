@@ -1,0 +1,24 @@
+name: Déploiement CD (Hugging Face)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Pousser vers Hugging Face Spaces
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+- name: Pousser vers Hugging Face Spaces
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          git push --force https://lockansalla:${{ secrets.HF_TOKEN }}@huggingface.co/spaces/lockansalla/Rattrapage-Git-Ansalla-Gambou-Lock-Larsen main
