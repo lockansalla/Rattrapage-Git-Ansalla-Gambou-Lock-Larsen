@@ -16,6 +16,9 @@ jobs:
 
       - name: Pousser vers Hugging Face Spaces
         env:
-          HF_TOKEN: ${{ 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 }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+- name: Pousser vers Hugging Face Spaces
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          git push --force https://[PSEUDO_HF]:$HF_TOKEN@huggingface.co/spaces/locklarsen/Rattrapage-Git-Ansalla-Gambou-Lock-Larsen main
+          git push --force https://lockansalla:${{ secrets.HF_TOKEN }}@huggingface.co/spaces/lockansalla/Rattrapage-Git-Ansalla-Gambou-Lock-Larsen main
