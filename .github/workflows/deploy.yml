@@ -9,13 +9,15 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Récupérer le code
+      - name: Récupérer le code avec Git LFS
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          lfs: true
 
       - name: Pousser vers Hugging Face Spaces
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
+          git config --global lfs.allowincompletepush true
           git push --force https://locklarsen:$HF_TOKEN@huggingface.co/spaces/locklarsen/Rattrapage-Git-Ansalla-Gambou-Lock-Larsen main
